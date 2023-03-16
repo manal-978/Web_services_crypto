@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cryptoapp-c6f51": {
+      "hosting": {
+        "webCryptoApp": [
+          "cryptoapp-c6f51"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cryptoapp-c6f51"
+  }
+}
