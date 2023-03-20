@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crypto-project-7db06": {
+      "hosting": {
+        "angularfiebaseAuthentification": [
+          "crypto-project-7db06"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crypto-project-7db06"
+  }
+}
