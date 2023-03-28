@@ -22,10 +22,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/img",
+              "src/assets/fonts"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
           },
@@ -93,9 +95,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/theme.min.css",
-              "src/theme.css"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -112,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
