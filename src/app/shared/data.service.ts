@@ -11,16 +11,16 @@ export class DataService {
 
   // insert news into firestore
   AddNews(news : News) {
-    return this.afs.collection('/Students').add(news)
+    return this.afs.collection('/News').add(news)
   }
 
   // get all the news from firestore
   GetAllNews(){
-    return this.afs.collection('/Students').snapshotChanges();
+    return this.afs.collection('/News').snapshotChanges();
   }
 
   DeleteNews(news : News) {
-    return this.afs.doc('/Students/' + news.id).delete();
+    return this.afs.doc('/News/' + news.id).delete();
   }
 
   UpdateNews(news : News) {
