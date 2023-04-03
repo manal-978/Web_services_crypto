@@ -8,7 +8,16 @@ import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider} from '@an
 })
 export class AuthService {
 
-  constructor(private fireauth : AngularFireAuth, private router : Router) { }
+
+  authState: any;
+
+  constructor(private fireauth : AngularFireAuth, private router : Router , private afAuth: AngularFireAuth) { 
+    
+  }
+
+  isAuthenticated() {
+    return this.fireauth.authState !== null;
+  }
 
   //login method
   login(email : string, password : string) {
@@ -19,6 +28,7 @@ export class AuthService {
       alert(err.message);
       this.router.navigate(['/login']);
     })
+    this.authState = true;
   }
 
   // register method
@@ -40,6 +50,7 @@ export class AuthService {
     }, err => {
       alert(err.message);
     })
+    this.authState = false;
   }
 
   //sign in with google

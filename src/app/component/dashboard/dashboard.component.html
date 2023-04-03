@@ -16,6 +16,39 @@
 
    <style>
 
+
+
+.star-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.star-icon {
+  color: white;
+}
+
+.star-icon + input[type="checkbox"]:checked + span {
+  color: gold;
+}
+
+.star-icon + input[type="checkbox"] {
+  display: none;
+}
+
+.star-button i {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.star-button i.gold {
+  color: gold;
+}
+
 /* inter-300 - latin */
 @font-face {
   font-family: 'Inter';
@@ -71,12 +104,12 @@
     <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"/>
     <path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z"/>
   </svg>
-  <span class="ms-md-1 mt-1 fw-bolder me-md-5">Klar</span>
+  <span style="color: lightblue;" class="ms-md-1 mt-1 fw-bolder me-md-5">Crypto</span>
 </a>
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
       <li class="nav-item">
-  <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+  <a class="nav-link fs-5" href="/dashboard" aria-label="Homepage">
     Home
   </a>
 </li>
@@ -85,15 +118,10 @@
     Converter
   </a>
 </li>
-<li class="nav-item">
-  <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
-    System
-  </a>
-</li>
 
     </ul>
-      <a href="https://templatedeck.com/klar-html-template.html" aria-label="Download this template" class="btn btn-outline-light">
-        <small>Download Template</small>
+      <a href="" (click)="logout()" aria-label="Logout" class="btn btn-outline-light">
+      <small>Logout</small>
       </a>
 </div>
 </nav>
@@ -104,235 +132,79 @@
       <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
         <div class="row d-flex align-items-center justify-content-center py-vh-5">
           <div class="col-12 col-xl-10">
-            <span class="h5 text-secondary fw-lighter">Our Mission</span>
-            <h1 class="display-huge mt-3 mb-3 lh-1">We do ordinary stuff for cool people</h1>
+            <h1  style="color: lightblue;" class="display-huge mt-3 mb-3 lh-1">Crypto News App</h1>
+            <span class="h5 text-secondary fw-lighter"><b>Our mission</b></span>
+
           </div>
           <div class="col-12 col-xl-8">
-            <p class="lead text-secondary">We are some sort of DAO working with AI, NFT´s, web 4.0 and the so called blockchain...in the Metaverse. You don´t understand a word? No problem, we neither!</p>
-          </div>
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-xl btn-light">Join us
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg>
-            </a>
+            <p class="lead text-secondary">Looking for the latest cryptocurrency news? Checkout our web application! Stay up-to-date with the latest developments in the world of cryptocurrency!</p>
           </div>
         </div>
       </div>
     </div>
-
-    <button class="btn btn-primary " (click)="fetch_api_data()"></button>
-
+    <h3  style="color: lightblue; margin-left: 50px; margin-bottom: 50px;" class="h3 ml-5">My favorites</h3>
     <div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
       <div class="container-fluid px-vw-5">
         <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
         <div class="row d-flex align-items-center position-relative justify-content-around px-0 g-5">
-          <div class="col-12 col-lg-4" >
-              <img src="assets/img/abstract18.jpg" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-              <div class="col-12 col-lg-12" data-aos="fade-right">
-                <h3 class="p-3">Product Design & Strategy</h3>
-                <p class="text-secondary p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-                  <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                </p>
-              </div>
-          </div>
-          <div class="col-12 col-lg-4" >
-              <img src="assets/img/abstract18.jpg" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="1000">
-              <div class="col-12 col-lg-12" data-aos="fade-up" data-aos-duration="1000">
-                <h3 class="p-3">Product Design & Strategy</h3>
-                <p class="text-secondary p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-                  <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                </p>
-              </div>
-          </div>
-          <div class="col-12 col-lg-4">
-              <img src="assets/img/abstract18.jpg" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
-              <div class="col-12 col-lg-12" data-aos="fade-left" data-aos-duration="2000">
-                <h3 class="p-3">Product Design & Strategy</h3>
-                <p class="text-secondary p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-                  <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                  </svg>
-                </p>
-              </div>
-          </div>
-
-          <div class="col-12 col-lg-4">
-            <img src="assets/img/abstract18.jpg" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="1000">
-            <div class="col-12 col-lg-12" data-aos="fade-left" data-aos-duration="1000">
-              <h3 class="p-3">Product Design & Strategy</h3>
-              <p class="text-secondary p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-                <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                </svg>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-4">
-            <img src="assets/img/abstract18.jpg" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
+          <div class="col-12 col-lg-4" *ngFor="let news of NewslistFav" >
+            <img [src]="news.src_image" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
             <div class="col-12 col-lg-12" data-aos="fade-left" data-aos-duration="2000">
-              <h3 class="p-3">Product Design & Strategy</h3>
-              <p class="text-secondary p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-                <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
+              
+              <p class="text-secondary p-3">{{ news.headline }}<br>
+              <p class="text-secondary p-3">{{ news.provider }}<br>
+                <a *ngIf="news.link_url" [href]="news.link_url" class="link-fancy link-fancy-light me-2">
+                  Tell me more
+                </a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
                 </svg>
               </p>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
-
-    <div class="bg-black py-vh-3">
-      <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-        <div class="row gx-5 ">
-          <div class="col-12 col-md-6">
-            <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../../assets/img/abstract3.jpg" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum ismail est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
+    <h3  style="color: lightblue; margin-left: 50px; margin-top: 50px; margin-bottom: 50px;" class="h3 ml-5">All articles</h3>
+    <div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
+      <div class="container-fluid px-vw-5">
+        <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
+        <div class="row d-flex align-items-center position-relative justify-content-around px-0 g-5">
+          <div class="col-12 col-lg-4" *ngFor="let news of Newslist" >
+            <div class="news-card-header">
+              <button  class="star-button">
+                <label class="star">
+                  <span style="display:none" class="star-icon">&#9734;</span>
+                  <input type="checkbox">
+                  <span style="font-weight: bold;" class="click-here"  (click)="toggleStar(news)">&#9734;</span>
+                </label>
+              </button>
             </div>
-
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../../assets/img/abstract2.jpg" width="582" height="442" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum ismail est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6">
-            <div class="p-5 pt-0 mt-5" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">What we don´t know</span>
-              <h2 class="display-4">There is a lot we don´t know. Here is a small sneak peek</h2>
-            </div>
-            <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../../assets/img/abstract17.jpg" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../../assets/img/abstract4.jpg" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
+            <img [src]="news.src_image" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
+            <div class="col-12 col-lg-12" data-aos="fade-left" data-aos-duration="2000">
+              
+              <p class="text-secondary p-3">{{ news.headline }}<br>
+              <p class="text-secondary p-3">{{ news.provider }}<br>
+                <a *ngIf="news.link_url" [href]="news.link_url" class="link-fancy link-fancy-light me-2">
+                  Tell me more
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                </svg>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div> 
+    </div>
+ 
 </main>
 
 <footer class="bg-black border-top border-dark">
-  <div class="container py-vh-4 text-secondary fw-lighter">
-    <div class="row">
-      <div class="col-12 col-lg-5 py-4 text-center text-lg-start">
-            <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack" viewBox="0 0 16 16">
-    <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"/>
-    <path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z"/>
-  </svg>
-  <span class="ms-md-1 mt-1 fw-bolder me-md-5">Klar</span>
-</a>
-
-      </div>
-      <div class="col border-end border-dark">
-        <span class="h6">Company</span>
-<ul class="nav flex-column">
-  <li class="nav-item">
-    <a href="#" class="link-fancy link-fancy-light">About us</a>
-  </li>
-  <li class="nav-item">
-    <a href="#" class="link-fancy link-fancy-light">Legal</a>
-  </li>
-
-  <li class="nav-item">
-    <a href="#" class="link-fancy link-fancy-light">Career</a>
-  </li>
-  <li class="nav-item">
-    <a href="#" class="link-fancy link-fancy-light">Contact</a>
-  </li>
-</ul>
-      </div>
-      <div class="col border-end border-dark">
-                <span class="h6">Services</span>
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Products</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Customers</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Success Stories</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">More</a>
-                  </li>
-                </ul>
-      </div>
-      <div class="col">
-                <span class="h6">Support</span>
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">About us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Legal</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Career</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="link-fancy link-fancy-light">Contact</a>
-                  </li>
-                </ul>
-      </div>
-    </div>
-  </div>
   <div class="container text-center small py-vh-2 border-top border-dark">Made by
-    <a href="https://templatedeck.com" class="link-fancy link-fancy-light" target="_blank">templatedeck.com</a>
+    <a href="https://github.com/manal-978/Web_services_crypto/tree/manal" class="link-fancy link-fancy-light" target="_blank">github team 15</a>
   </div>
 </footer>
-
 
 <script src="../../../assets/js/aos.js"></script>
 <script>

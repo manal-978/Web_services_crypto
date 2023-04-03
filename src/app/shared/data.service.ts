@@ -27,4 +27,8 @@ export class DataService {
     this.DeleteNews(news);
     this.AddNews(news);
   }
+
+  getThreeNews() {
+    return this.afs.collection('/News', ref => ref.limit(3)).valueChanges();
+  }
 }

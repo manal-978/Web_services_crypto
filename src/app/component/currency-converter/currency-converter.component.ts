@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component , ViewChild} from '@angular/core';
 import { Currency } from 'src/app/model/currency';
 import * as AOS from 'aos';
 import { AuthService } from 'src/app/shared/auth.service';
 import { DataService } from 'src/app/shared/data.service';
 import { ApiService } from 'src/app/shared/api.service';
+import { LoginComponent } from 'src/app/component/login/login.component';
 
 interface Car {
   value: string;
@@ -17,6 +18,7 @@ interface Car {
 })
 
 export class CurrencyConverterComponent {
+  @ViewChild(LoginComponent) login!: LoginComponent;
 
 
   public currency_from: number = 0;
@@ -56,5 +58,9 @@ export class CurrencyConverterComponent {
     this.apiService.currency_exchange(this.currency_from , this.currency_to).subscribe((data) => {
       this.output = data.data[0][0].basic * this.quantity
     });
+  }
+
+  logout(){
+    this.login.logout();
   }
 }

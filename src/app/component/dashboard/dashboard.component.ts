@@ -4,6 +4,9 @@ import { AuthService } from 'src/app/shared/auth.service';
 import { DataService } from 'src/app/shared/data.service';
 import { ApiService } from 'src/app/shared/api.service';
 import * as AOS from 'aos';
+import { User } from 'firebase/auth';
+import firebase from 'firebase/compat/app';
+import { Router } from '@angular/router';
 
 
 
@@ -15,13 +18,14 @@ import * as AOS from 'aos';
 export class DashboardComponent {
 
   Newslist : News[] = [];
-
+  NewslistFav : any[] = [];
   newsObj : News = {
     id : '',
     src_image : '',
     link_url : '',
     headline : '',
-    provider : ''
+    provider : '',
+    text : ''
   };
 
   id : string = '';
@@ -29,13 +33,26 @@ export class DashboardComponent {
   link_url : string = '';
   headline : string = '';
   provider : string = '';
+  text : string = '';
 
-  constructor(private auth : AuthService , private data : DataService , public apiService : ApiService) {}
+  constructor(private auth : AuthService , private data : DataService , public apiService : ApiService, private router : Router) {}
+
+  
 
   ngOnInit(): void {
+    const isAuthenticated = this.auth.isAuthenticated();
+    if (this.auth.authState) {
+      this.router.navigate(['/login']);
+    }
     AOS.init({
       duration: 800, // values from 0 to 3000, with step 50ms
      });
+     this.data.getThreeNews().subscribe((data) => {
+      this.NewslistFav = data;
+      console.log(this.NewslistFav);
+      });
+     this.fetch_api_data();
+     
   }
 
   fetch_api_data(){
@@ -54,6 +71,7 @@ export class DashboardComponent {
         //console.log(data.data[0].screen_data.news[i].news_provider_name);
         news.id = data.data[0].screen_data.news[i].news_ID;
         //console.log(data.data[0].screen_data.news[i].news_ID)
+        news.text = data.data[0].screen_data.news[i].BODY;
 
         this.Newslist.push(news);
       }
@@ -93,6 +111,7 @@ export class DashboardComponent {
     })
   }
 
+
   resetForm() {
     this.id = '';
     this.headline = '';
@@ -126,4 +145,15 @@ export class DashboardComponent {
       this.data.DeleteNews(news)
     }
   }
+
+  logout(){
+    this.auth.logout();
+  }
+
+  toggleStar(news: News) {
+  
+    this.data.AddNews(news);
+  }
+
+  
 }

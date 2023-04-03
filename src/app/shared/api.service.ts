@@ -17,7 +17,7 @@ export class ApiService {
     let news_data: string;
 
     const headers: HttpHeaders = new HttpHeaders({
-      'X-RapidAPI-Key': '569a65d82amsh8caae75e510b828p1c7061jsn36a45ff18bfc',
+      'X-RapidAPI-Key': '58f5726b85mshd39125badd979fdp1c6a6cjsnc796ee5ab53b',
       'X-RapidAPI-Host': 'investing-cryptocurrency-markets.p.rapidapi.com'
     });
 
@@ -38,7 +38,7 @@ export class ApiService {
     let baseUrl_currencies: string = "https://investing-cryptocurrency-markets.p.rapidapi.com/currencies/list"
 
     const headers: HttpHeaders = new HttpHeaders({
-      'X-RapidAPI-Key': '569a65d82amsh8caae75e510b828p1c7061jsn36a45ff18bfc',
+      'X-RapidAPI-Key': '58f5726b85mshd39125badd979fdp1c6a6cjsnc796ee5ab53b',
       'X-RapidAPI-Host': 'investing-cryptocurrency-markets.p.rapidapi.com'
     });
 
@@ -56,7 +56,7 @@ export class ApiService {
     let baseUrl_currencies: string = "https://investing-cryptocurrency-markets.p.rapidapi.com/currencies/get-rate"
 
     const headers: HttpHeaders = new HttpHeaders({
-      'X-RapidAPI-Key': '569a65d82amsh8caae75e510b828p1c7061jsn36a45ff18bfc',
+      'X-RapidAPI-Key': '58f5726b85mshd39125badd979fdp1c6a6cjsnc796ee5ab53b',
       'X-RapidAPI-Host': 'investing-cryptocurrency-markets.p.rapidapi.com'
     });
 

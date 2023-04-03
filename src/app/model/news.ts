@@ -3,5 +3,6 @@ export interface News {
     src_image : string,
     link_url : string,
     headline : string,
-    provider : string
+    provider : string,
+    text : string
 }
