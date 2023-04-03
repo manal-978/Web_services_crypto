@@ -40,7 +40,6 @@ export class DashboardComponent {
 
   fetch_api_data(){
     
-
     this.apiService.getNews('1057391' , '1').subscribe((data) => {
       let news = {} as News;
       for (let i = 0; i < data.data[0].screen_data.news.length ; i++) {
